@@ -68,6 +68,11 @@ is_pareto_efficient <- function(fitness_matrix) {
   }
   return(is_efficient)
 }
+
+fitness_mat <- as.matrix(F_origin_df[, c("mean_Glycolysis", "mean_OxPhos")])
+pareto_mask <- is_pareto_efficient(fitness_mat)
+F_origin_df$pareto_label <- ifelse(pareto_mask, "Pareto", "NonPareto")
+pareto_points <- F_origin_df[pareto_mask, ]
 ```
 
 ```{r Figure 1A}
@@ -342,5 +347,6 @@ anova_result <- aov(Slope ~ Group, data = regression_results)
 summary(anova_result)
 TukeyHSD(anova_result)
 ```
+
 
 ```
