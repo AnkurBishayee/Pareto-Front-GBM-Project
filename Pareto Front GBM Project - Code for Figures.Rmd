@@ -4,6 +4,14 @@ author: "A.B."
 date: "2025-10-28"
 output: pdf_document
 ---
+```{r}
+remove.packages("ggplot2")
+remove.packages("dplyr")
+remove.packages("tidyr")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("tidyr")
+```
 
 ```{r}
 base <- "https://raw.githubusercontent.com/AnkurBishayee/Pareto-Front-GBM-Project/main"
@@ -350,3 +358,4 @@ TukeyHSD(anova_result)
 
 
 ```
+
