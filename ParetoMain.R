@@ -1,4 +1,10 @@
 source("C:/Users/Ankur/Downloads/ParetoUtils.R")
+remove.packages("ggplot2")
+remove.packages("dplyr")
+remove.packages("tidyr")
+install.packages("ggplot2", repos = "https://cloud.r-project.org")
+install.packages("dplyr", repos = "https://cloud.r-project.org")
+install.packages("tidyr", repos = "https://cloud.r-project.org")
 library(ggplot2)
 library(dplyr)
 library(tidyr)
@@ -274,4 +280,5 @@ ggplot(regression_results %>% filter(R2 > 0.7), aes(x = Group, y = Slope, fill =
   theme(legend.position = "none") + theme(plot.title = element_text(hjust = 0.5))
 anova_result <- aov(Slope ~ Group, data = regression_results)
 summary(anova_result)
+
 TukeyHSD(anova_result)
