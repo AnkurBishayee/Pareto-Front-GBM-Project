@@ -8,9 +8,9 @@ output: pdf_document
 remove.packages("ggplot2")
 remove.packages("dplyr")
 remove.packages("tidyr")
-install.packages("ggplot2")
-install.packages("dplyr")
-install.packages("tidyr")
+install.packages("ggplot2", repos = "https://cloud.r-project.org")
+install.packages("dplyr", repos = "https://cloud.r-project.org")
+install.packages("tidyr", repos = "https://cloud.r-project.org")
 ```
 
 ```{r}
@@ -358,4 +358,5 @@ TukeyHSD(anova_result)
 
 
 ```
+
 
